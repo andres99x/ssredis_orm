@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["apache90@gmail.com"]
   spec.description   = "Super simple redis orm for learning purposes."
   spec.summary       = "Super simple redis orm for learning purposes."
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/andres99x/ssredis_orm.git"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
