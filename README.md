@@ -1,6 +1,8 @@
 # SsredisOrm
 
-TODO: Write a gem description
+SsredisOrm it's just a very basic and simple redis orm, made for fun and learning purposes.
+
+It doesn't support relationships but i hope it does one day. Feel free to contibute and i hope it helps someone :).
 
 ## Installation
 
@@ -18,7 +20,23 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+###Setting up redis rerver connection
+
+You should initialize redis and set up a global $redis variable.
+
+    require 'redis'
+    $redis = Redis.new(:host => 'localhost', :port => 6379)
+    
+###Defining your model
+
+Just create your model and extend `SsredisOrm::Model`.
+    
+    class User
+        extend SsredisOrm::Model
+        field :name, :username, :password
+    end
+
+Specify as many fields you wish to persist. Fields and the class itself will be serialized using de `JSON` library and persisted in redis under the key `#{class.name}:#{@id}`. Id's are auto-incremental, using redis atomic increment operations.
 
 ## Contributing
 
